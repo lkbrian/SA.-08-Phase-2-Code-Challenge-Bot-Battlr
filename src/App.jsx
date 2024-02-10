@@ -1,10 +1,11 @@
-import BotCollection from "./components/BotCollection"
-
+import BotLayout from "./BotLayout"
+// import BotCollection from "./components/BotCollection"
 
 function App() {
   return (
     <div>
-      <BotCollection />
+      {/* <BotCollection /> */}
+      <BotLayout/>
     </div>
   )
 }
