@@ -1,18 +1,6 @@
 {
   "bots": [
     {
-      "id": "103",
-      "name": "P-24",
-      "health": 88,
-      "damage": 25,
-      "armor": 60,
-      "bot_class": "Witch",
-      "catchphrase": "1100101001110111110010011010110",
-      "avatar_url": "https://robohash.org/idetcumque.png?size=300x300&set=set1",
-      "created_at": "2018-10-02T19:55:10.844Z",
-      "updated_at": "2018-10-02T19:55:10.844Z"
-    },
-    {
       "id": "104",
       "name": "qq-69",
       "health": 74,

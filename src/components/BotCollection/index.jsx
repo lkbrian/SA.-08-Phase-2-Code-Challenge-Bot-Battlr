@@ -11,7 +11,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import _ from "lodash";
+// import _ from "lodash";
 import PropTypes from 'prop-types'
 function BotCollection({botData,isLoading,onEnlist}) {
  
@@ -30,10 +30,7 @@ function BotCollection({botData,isLoading,onEnlist}) {
       height="minmax(100vh, auto)"
     >
 
-      {_.isEmpty(botData)? <Text>No 
-        data available
-      </Text>:
-      (isLoading ? (
+      {isLoading ? (
         <Flex
           justify={"center"}
           alignItems={"center"}
@@ -73,10 +70,8 @@ function BotCollection({botData,isLoading,onEnlist}) {
               <Stack>
                 <CardBody >
                   <Heading textTransform={"uppercase"} size="md">Name: {data.name}</Heading>
-                  <Heading textTransform={"lowercase"} size="sm">Bot class: {data.bot_class}</Heading>            
-                  <Text py="2">Created<br/>{data.created_at} </Text>
-                  <Text py="2">Updated<br/>{data.updated_at} </Text>                
-                  <Text py="2">Updated<br/>Identification: {data.id} </Text>
+                  <Heading textTransform={"lowercase"} py="2" size="sm">Bot class: {data.bot_class}</Heading>              
+                  <Text>Identification: {data.id} </Text>
                 </CardBody>
 
                 <CardFooter>
@@ -90,7 +85,7 @@ function BotCollection({botData,isLoading,onEnlist}) {
             </Card>
           );
         })
-      ))}
+      )}
     </SimpleGrid>
     </>
   );

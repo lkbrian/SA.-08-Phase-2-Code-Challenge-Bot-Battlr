@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import BotCollection from "./components/BotCollection";
 import YourBotArmy from "./components/YourBotArmy";
+import Navbar from "./components/NavBar";
+import { Routes, Route } from "react-router-dom";
 
 function BotLayout() {
   const [botData, setBotData] = useState(null);
@@ -31,7 +33,6 @@ function BotLayout() {
       setYourBotArmy(() => [...yourBotArmy, enlisted]);
     }
   };
-  
 
   const handleReleaseBot = (selectedBot) => {
     const updatedBotArmy = yourBotArmy.filter((bot) => {
@@ -40,24 +41,38 @@ function BotLayout() {
     setYourBotArmy(updatedBotArmy);
   };
   const handleDischargeBot = (botId) => {
-    const updatedBotollection = botData.filter((bot)=>{
-      return bot.id !== botId
-    })
-    setBotData(updatedBotollection)
-    handleReleaseBot(botId)
+    const updatedBotollection = botData.filter((bot) => {
+      return bot.id !== botId;
+    });
+    setBotData(updatedBotollection);
+    handleReleaseBot(botId);
   };
   return (
     <>
-      <YourBotArmy
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <BotCollection
+              botData={botData}
+              isLoading={isLoading}
+              onEnlist={handleEnlistBot}
+            />
+          }
+        />
+            <Route
+          path="/YourBotArmy"
+          element={
+            <YourBotArmy
         yourBotArmy={yourBotArmy}
         onRelease={handleReleaseBot}
         onDischarge={handleDischargeBot}
       />
-      <BotCollection
-        botData={botData}
-        isLoading={isLoading}
-        onEnlist={handleEnlistBot}
-      />
+          }
+        />
+      </Routes>
+     
     </>
   );
 }

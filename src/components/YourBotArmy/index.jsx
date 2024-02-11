@@ -23,7 +23,7 @@ function YourBotArmy({ yourBotArmy,onRelease,onDischarge }) {
   };
   return (
     <>
-      <Heading size={"md"}>YourBotArmy</Heading>
+      <Heading size="2xl" textAlign={'center'}>YourBotArmy</Heading>
       <SimpleGrid
         as="div"
         spacing={4}
