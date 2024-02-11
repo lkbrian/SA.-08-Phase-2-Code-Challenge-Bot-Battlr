@@ -7,7 +7,6 @@ import { Routes, Route } from "react-router-dom";
 function BotLayout() {
   const [botData, setBotData] = useState(null);
   const [yourBotArmy, setYourBotArmy] = useState([]);
-  //
   const [isLoading, setIsLoading] = useState(true);
   const API_URL = `http://localhost:3000/bots`;
   useEffect(() => {

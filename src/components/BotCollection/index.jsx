@@ -11,13 +11,10 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-// import _ from "lodash";
 import PropTypes from 'prop-types'
 function BotCollection({botData,isLoading,onEnlist}) {
  
-  // const handleClick = ()=>{
-  //   const enlistedBot =
-  // }
+
 
   return (
     <>  
@@ -45,7 +42,7 @@ function BotCollection({botData,isLoading,onEnlist}) {
             color="blue.500"
             size="xl"
           />
-          <Text>Please wait, Loading data..</Text>
+          <Text fontWeight={'bold'}>Please wait, Loading data..</Text>
         </Flex>
       ) : (
         botData.map((data, index) => {
@@ -78,7 +75,7 @@ function BotCollection({botData,isLoading,onEnlist}) {
                   <Button variant="solid" colorScheme="blue"
                   onClick={()=> onEnlist(data.id)}
                   >
-                    Enlist
+                    Enlist bot
                   </Button>
                 </CardFooter>
               </Stack>
