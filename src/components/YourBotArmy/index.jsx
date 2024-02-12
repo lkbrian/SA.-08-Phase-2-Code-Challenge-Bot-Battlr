@@ -22,7 +22,7 @@ function YourBotArmy({ yourBotArmy, onRelease, onDischarge }) {
     fetch(`http://localhost:3000/bots/${botId}`, {
       method: "DELETE",
     })
-      .then((response) => response.json)
+      .then((response) => response.json())
       .then(() => onDischarge(botId));
   };
   return (
